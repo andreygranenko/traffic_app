@@ -6,8 +6,8 @@ export const GET = async (request) => {
 
   try {
     await client.connect();
-    const database = client.db('traffic_rules'); // Choose a name for your database
-    const collection = database.collection('visparigi_noteikumi'); // Choose a name for your collection
+    const database = client.db('traffic_rules');
+    const collection = database.collection('traffic_rules_groups');
     const allData = await collection.find({}).toArray();
 
     return NextResponse.json(allData);
