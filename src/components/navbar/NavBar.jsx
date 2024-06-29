@@ -38,6 +38,7 @@ const NavBar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li><Link href={'/noteikumi'}>Noteikumi</Link></li>
+          <li><Link href={'/zimes'}>Ceļa zīmes</Link></li>
           <li>
             <details>
               <summary>Tests</summary>
@@ -47,7 +48,6 @@ const NavBar = () => {
               </ul>
             </details>
           </li>
-          <li><a>Item 3</a></li>
         </ul>
       </div>
       <div className="navbar-end">
