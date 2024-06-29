@@ -20,15 +20,27 @@ const ZimesPage = async () => {
     <div className={'container mx-auto mt-5 px-8 xl:px-10 pb-8'}>
       <h2 className={'text-center text-2xl font-bold'}>Ceļu zīmes</h2>
       <h3 className={'text-xl font-bold mt-8'}>Satura rādītājs</h3>
-      <div className={'flex items-start lg:justify-between mt-8 gap-x-10 gap-y-10 flex-wrap'}>
+      <div className={'flex items-start md:justify-between mt-8 gap-x-10 gap-y-10 flex-wrap'}>
         {
           allSigns && allSigns.map(({number, title, path, description, img_path}) => (
-            <Link href={path} key={number} className={' flex flex-col w-full lg:w-5/12 xl:w-1/4  min-h-64 gap-3 relative'}>
-                <Image className={'rounded-md w-full object-cover'} src={'/' + img_path} alt={'chill'} width={'308'} height={'308'}/>
 
-              <h4 className={'text-left font-bold text-lg  hover:underline'}>{number}. {title}</h4>
-              <p className={'text-justify flex-grow'}>{description}</p>
-            </Link>
+            <div key={number} className="card glass w-full md:w-5/12 xl:w-1/4">
+              <figure className={'h-52'} >
+                <Image
+                  src={'/' + img_path}
+                  alt="car!"
+                  width={200}
+                  height={300}/>
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">{number}. {title}</h2>
+                <p>{description}</p>
+                <div className="card-actions justify-end">
+                  <Link href={path} className="btn btn-primary">Mācieties tūlīt!</Link>
+                </div>
+              </div>
+            </div>
+
 
           ))
         }
