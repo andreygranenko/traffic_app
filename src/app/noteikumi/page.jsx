@@ -19,7 +19,7 @@ const NoteikumuPage = async () => {
 
 
   return (
-    <div className={'container mx-auto mt-5 px-8 xl:px-10 pb-8'}>
+    <div className={'container  mx-auto pt-5 px-8 xl:px-10 pb-8'}>
       <h2 className={'text-center text-2xl font-bold'}> Ceļu satiksmes noteikumi </h2>
       <h3 className={'text-xl font-bold mt-8'}>Satura rādītājs</h3>
       <div className={'flex items-start lg:justify-between mt-8 gap-x-10 gap-y-10 flex-wrap'}>

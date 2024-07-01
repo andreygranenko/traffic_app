@@ -83,10 +83,10 @@ const SingleZimesGroupPage = async ({params}) => {
 
 
   return (
-    <div className={'container mx-auto mt-5 px-8 xl:px-10 pb-8'}>
+    <div className={'container bg-white mx-auto pt-5 px-8 xl:px-10 pb-8'}>
 
       <h2 className={'text-center text-2xl font-bold'}>Zimes</h2>
-      <div className="flex justify-between">
+      <div className="flex justify-between my-5">
         {currentGroupIndex > 0 ? <Link href={`/zimes/${groups[currentGroupIndex - 1]}`} className={'btn btn-sm'}>Iepriekšējā grupa</Link> :
           <button  className={'btn-disabled btn btn-sm'}>Iepriekšējā grupa</button>}
         {currentGroupIndex < groups.length - 1 ? <Link href={`/zimes/${groups[currentGroupIndex + 1]}`} className="btn btn-sm ">Nākamā grupa</Link> :
