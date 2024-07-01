@@ -10,7 +10,7 @@ export const GET = async (request) => {
     const collectionName = searchParams.get('collection') || 'traffic_rules_groups';
     const database = client.db('traffic_signs');
     const collection = database.collection(collectionName);
-    const allData = await collection.find({}).toArray();
+    const allData = await collection.find({}).sort({sign_num: 1}).toArray();
 
     return NextResponse.json(allData);
   } catch (error) {

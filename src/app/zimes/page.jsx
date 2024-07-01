@@ -24,9 +24,10 @@ const ZimesPage = async () => {
         {
           allSigns && allSigns.map(({number, title, path, description, img_path}) => (
 
-            <div key={number} className="card glass w-full md:w-5/12 xl:w-1/4">
+            <Link href={path} key={number} className="card card-compact w-full md:w-5/12 xl:w-1/4 transition-all duration-300 hover:scale-110">
               <figure className={'h-52'} >
                 <Image
+                  className={''}
                   src={'/' + img_path}
                   alt="car!"
                   width={200}
@@ -35,11 +36,11 @@ const ZimesPage = async () => {
               <div className="card-body">
                 <h2 className="card-title">{number}. {title}</h2>
                 <p>{description}</p>
-                <div className="card-actions justify-end">
-                  <Link href={path} className="btn btn-primary">Mācieties tūlīt!</Link>
-                </div>
+                {/*<div className="card-actions justify-end">*/}
+                {/*  <Link href={path} className="btn btn-primary">Mācieties tūlīt!</Link>*/}
+                {/*</div>*/}
               </div>
-            </div>
+            </Link>
 
 
           ))
