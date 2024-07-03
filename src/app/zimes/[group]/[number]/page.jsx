@@ -31,10 +31,10 @@ const SingleSignPage = async ({params}) => {
   const oneSign = sign[0];
   console.log(sign, 'checking');
   return (
-    <div className={'container px-8 md:px-10 mx-auto py-8 '}>
+    <div className={'container px-8 md:px-10 mx-auto py-6 '}>
       <div className={'flex flex-col lg:flex-row gap-12 lg:gap-5'}>
         <div className={'lg:flex-1 flex justify-center px-10'}>
-          <img className={'object-cover rounded-3xl'} src="/image1.png"  alt="fds"/>
+          <img className={'object-cover rounded-3xl lg:max-w-sm'} src="/image1.png"  alt="fds"/>
         </div>
         <div className={'lg:flex-1 flex flex-col lg:bg-white   bg-base-300 rounded-3xl p-6'}>
           <span className={'text-primary '}>Ceļa zīmju enciklopēdija</span>
