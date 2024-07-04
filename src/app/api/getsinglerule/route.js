@@ -1,5 +1,6 @@
 import { MongoClient } from 'mongodb';
 import {NextResponse} from "next/server";
+import {console} from "next/dist/compiled/@edge-runtime/primitives";
 
 export const GET = async (request) => {
   const client = new MongoClient(process.env.MONGO);
