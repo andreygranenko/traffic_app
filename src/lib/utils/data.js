@@ -20,7 +20,7 @@ export const noteikumiKeys = {
 }
 
 export const noteikumiTitles = {
-  '1': '1. pants Vispārīgi noteikumi',
+  '1': 'Vispārīgi noteikumi',
   '2': 'Gājēju un pasažieru pienākumi',
   '3': 'Transportlīdzekļu vadītāju pienākumi',
   '4': 'Transportlīdzekļa vadītāja pienākumi īpašos gadījumos',

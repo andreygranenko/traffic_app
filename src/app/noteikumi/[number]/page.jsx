@@ -24,17 +24,55 @@ const singleNoteikumiPage = async ({params}) => {
   });
 
   return (
-    <div style={{minHeight: 'calc(100vh - 288px)'}} className={'container py-6 px-10'}>
+    <div style={{minHeight: 'calc(100vh - 288px)'}} className={' container py-6 px-10 mx-auto w-full'}>
       <div className={'flex gap-10'}>
-        <div className={'w-9/12 relative'}>
+        <div className={'w-8/12 relative scroll-smooth'}>
           <Image width={2000} height={300} className={' object-cover'} src="/man.png" alt="man"/>
 
-          <h2>hey</h2>
-          <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi beatae consequatur expedita facere fugit in non saepe! Cum doloribus eos explicabo fuga illo ipsa iure laborum necessitatibus nemo reprehenderit. Sequi?</span><span>Omnis, saepe, sit! Animi doloribus eligendi est laboriosam perspiciatis reprehenderit sapiente similique sit. Commodi consequuntur culpa cupiditate eaque fuga maxime minus nam nesciunt odio officiis praesentium quae reiciendis repudiandae, veritatis.</span><span>Beatae commodi dolores id minima molestiae perferendis quam quo! Aperiam, deserunt et hic illum labore molestias non. Aliquam animi aperiam, cumque, enim eum fugiat iure minima minus odit omnis quam.</span><span>A molestiae nostrum placeat, unde veritatis voluptatum? Ab accusamus commodi consectetur deserunt incidunt natus nemo nesciunt similique. Aliquid autem cumque, labore, laudantium minus nam nobis quam, repudiandae totam vitae voluptatibus.</span><span>A alias, animi architecto beatae commodi culpa cumque doloribus ea et, harum illo inventore, ipsum labore laborum maiores maxime minus neque nihil odit officia possimus quod suscipit vel vitae voluptas!</span><span>Accusamus autem deleniti dolores ducimus esse facere libero nesciunt obcaecati omnis pariatur praesentium, quo recusandae rerum? Accusamus beatae, consectetur consequatur cupiditate debitis dolor error fugit ipsum repudiandae sed voluptas voluptate!</span><span>Adipisci aut autem ipsa maxime minima mollitia, veritatis? A aliquid asperiores deleniti error eveniet iusto magnam maxime necessitatibus obcaecati placeat, quas reprehenderit tempore, vero voluptate voluptatem. Autem eum ex quis.</span><span>Deleniti exercitationem id molestiae neque soluta. Cupiditate ea eaque officia optio perferendis quia, totam. Deleniti doloremque error est ipsa itaque magnam, molestias necessitatibus, nobis odio omnis sunt unde veritatis voluptates.</span></p>
+          {singleRule.map((rule, i) => (
+            <>
+              {rule.subpoints.length > 0 ? (
+                <div className="collapse collapse-arrow bg-base-300 mt-5">
+                  <input type="radio" name="my-accordion-2" defaultChecked />
+                  <div className="collapse-title text-xl font-bold">{i + 1}. {rule.text}</div>
+                  <div className="collapse-content rounded-xl ">
+                    {rule.subpoints?.map((subpoint, i) => (
+                      <h4 key={i} className={'text-xl  font-medium mt-3 '}>{i + 1}. {subpoint.text}</h4>
+
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="collapse  bg-base-300 mt-5">
+                  <div className="collapse-title text-xl font-bold">{i + 1}. {rule.text}</div>
+                </div>
+
+
+
+              )}
+
+
+
+            </>
+
+          ))}
+
         </div>
-        <div className={'w-1/4 flex flex-col gap-5'}>
-          <h2 className={'text-5xl font-bold'}>{title}</h2>
-          <p>{singleRule[1]?.subpoints[0].text}</p>
+        <div className={'w-4/12 flex flex-col gap-10'}>
+          <div className={'bg-base-300 p-5 rounded-xl'}>
+            <h2 className={'text-4xl font-bold'}>{number}. pants</h2>
+            <h2 className={'text-4xl font-bold'}>{title}</h2>
+          </div>
+          <div className={'bg-base-300 p-8 rounded-xl'}>
+            <h4 className={'text-xl font-bold'}>ŠAJĀ PANTĀ</h4>
+            <ol className={'ml-4 text-lg flex flex-col gap-2 mt-4 scroll-smooth'}>
+              {
+                singleRule.map((rule, i) => (
+                  <li key={rule._id}><a href={`#${rule._id}`}> {i + 1}. {rule.text.length > 83 ? rule.text.slice(0, 84) : rule.text}</a></li>
+                ))
+              }
+            </ol>
+          </div>
         </div>
       </div>
 
