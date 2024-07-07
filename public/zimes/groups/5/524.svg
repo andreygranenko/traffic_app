@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="47.6136mm" height="47.6136mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1270 1270"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil3 {fill:#2B2A29}
+    .fil1 {fill:#FEFEFE}
+    .fil0 {fill:#CCCCCC}
+    .fil2 {fill:#2B2A29;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <path class="fil0" d="M635 100c215,0 390,175 390,391 0,215 -175,391 -390,391 -215,0 -391,-175 -391,-391 0,-215 175,-391 391,-391z"/>
+  <path class="fil1" d="M810 716l-401 -401c-38,48 -60,109 -60,175 0,158 128,285 285,285 66,0 127,-22 175,-60z"/>
+  <path class="fil0" d="M793 715l-382 -382c-33,46 -50,101 -50,158 0,151 123,274 274,274 57,0 112,-17 158,-50z"/>
+  <path class="fil1" d="M460 265l401 401c38,-48 60,-109 60,-175 0,-158 -128,-285 -285,-285 -66,0 -127,22 -175,60z"/>
+  <path class="fil0" d="M477 266l382 382c33,-46 50,-101 50,-158 0,-151 -123,-274 -274,-274 -57,0 -112,17 -158,50z"/>
+  <polygon class="fil2" points="630,1182 630,998 657,998 741,1130 741,998 769,998 769,1182 742,1182 658,1050 658,1182 "/>
+  <path class="fil2" d="M795 1182l68 -185 23 0 67 185 -30 0 -14 -41 -71 0 -14 41 -30 0zm52 -66l54 0 -27 -81 -27 81z"/>
+  <path class="fil3" d="M51 0c-28,0 -51,23 -51,51l0 1169c0,28 23,51 51,51l1169 0c28,0 51,-23 51,-51l0 -1169c0,-28 -23,-51 -51,-51l-1169 0zm54 1256l1152 -1152 0 -54c0,-2 0,-5 -1,-7l-1212 1212c2,0 5,1 7,1l54 0zm1152 -1090l-1090 1090 1054 0c20,0 36,-16 36,-36l0 -1054zm-1241 1057l1208 -1208c-1,0 -2,0 -3,0l-59 0 -1147 1147 0 59c0,1 0,2 0,3zm0 -123l1085 -1085 -1049 0c-20,0 -36,16 -36,36l0 1049z"/>
+  <polygon class="fil2" points="317,1182 317,1159 401,1022 321,1022 321,998 436,998 436,1019 352,1156 436,1156 436,1182 "/>
+  <path class="fil2" d="M462 1118l0 -56c0,-36 30,-66 66,-66 36,0 66,30 66,66l0 56c0,36 -30,66 -66,66 -36,0 -66,-29 -66,-66zm28 0c0,21 17,38 38,38 21,0 38,-17 38,-38l0 -56c0,-21 -17,-38 -38,-38 -21,0 -38,17 -38,38l0 56z"/>
+ </g>
+</svg>
