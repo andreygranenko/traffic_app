@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "^11.2.13",
     "mongodb": "^6.7.0",
     "mongoose": "^8.4.3",
     "next": "14.2.4",
@@ -16,6 +17,8 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/node": "20.14.10",
+    "@types/react": "18.3.3",
     "daisyui": "^4.12.10",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",

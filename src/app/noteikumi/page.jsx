@@ -1,20 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-const fetchAllData = async () => {
-  const response = await fetch('http://localhost:3000/api/getalldata');
+import {fetchAllRules} from "@/lib/fetch/fetch";
 
-  if (response.ok) {
-    const data = await response.json();
-    return data;
-  } else {
-    console.log(response.statusText)
-    alert('Failed to fetch data!');
-  }
-};
 
 
 const NoteikumuPage = async () => {
-  const allData = await fetchAllData();
+  const allData = await fetchAllRules();
 
 
 

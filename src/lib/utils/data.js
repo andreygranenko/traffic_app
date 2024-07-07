@@ -35,3 +35,16 @@ export const noteikumiTitles = {
   '13': 'Ceļu kustības regulējums stāvoklis',
   '14': 'Ceļu kustības regulējums vadība',
 }
+
+export const pants = [
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10'
+]
