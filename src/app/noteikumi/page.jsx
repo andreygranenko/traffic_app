@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import {fetchAllRules} from "@/lib/fetch/fetch";
+import {fetchAllRules} from "../../lib/fetch/fetch";
 
 
 

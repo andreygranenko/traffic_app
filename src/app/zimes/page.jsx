@@ -27,7 +27,7 @@ const ZimesPage = async () => {
             <Link href={path} key={number} className="card bg-white p-5 card-compact w-full md:w-5/12 xl:w-1/4 transition-all duration-300 hover:scale-110">
               <figure className={'h-52'} >
                 <Image
-                  className={''}
+                  className={'m'}
                   src={'/' + img_path}
                   alt="car!"
                   width={200}
@@ -35,7 +35,7 @@ const ZimesPage = async () => {
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{number}. {title}</h2>
-                <p>{description}</p>
+                <p className={'break-words'}>{description}</p>
                 {/*<div className="card-actions justify-end">*/}
                 {/*  <Link href={path} className="btn btn-primary">Mācieties tūlīt!</Link>*/}
                 {/*</div>*/}

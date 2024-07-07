@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Modal from "@/components/modal/modal";
+import Modal from "../components/modal/modal";
 
 export default function Home() {
   return (
     <>
-      <div className={'container mx-auto py-10'}>
-        <main className=" min-h-screen px-10 ">
+      <div style={{minHeight: 'calc(100vh - 288px)'}} className={'container mx-auto py-10'}>
+        <main className=" px-10 ">
           <div className=" flex flex-col lg:flex-row-reverse">
             <img
               src="https://images.pexels.com/photos/21273614/pexels-photo-21273614/free-photo-of-taxi-on-a-city-street-at-dusk.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"

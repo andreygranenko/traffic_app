@@ -1,6 +1,7 @@
 import {console} from "next/dist/compiled/@edge-runtime/primitives";
 import Image from "next/image";
 import Link from "next/link";
+import {firstDigit} from "../../../lib/utils/math";
 
 
 function getSignType(number) {
@@ -127,10 +128,14 @@ const SingleZimesGroupPage = async ({params}) => {
         <td>
           <div className="flex items-center gap-3">
             <div className="avatar">
-              <div className="mask mask-squircle h-12 w-12">
-                <img
-                  src="https://images.pexels.com/photos/272254/pexels-photo-272254.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                  alt="Avatar Tailwind CSS Component" />
+              <div className="mask  h-12 w-28">
+                <Image
+                  style={{objectFit: 'fill'}}
+                  width={200}
+                  height={100}
+                  className={'object-fill'}
+                  src={`/zimes/groups/${firstDigit(sign_num)}/${sign_num}.svg` /*|| "https://images.pexels.com/photos/272254/pexels-photo-272254.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"*/}
+                  alt={sign_num + '. zīme'} />
               </div>
             </div>
             <div>

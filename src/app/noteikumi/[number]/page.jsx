@@ -1,7 +1,7 @@
-import {noteikumiKeys, noteikumiTitles, pants} from "@/lib/utils/data";
+import {noteikumiKeys, noteikumiTitles, pants} from "../../../lib/utils/data";
 import Image from "next/image";
 import Link from "next/link";
-import {fetchAllRules, fetchSingleRule} from "@/lib/fetch/fetch";
+import {fetchAllRules, fetchSingleRule} from "../../../lib/fetch/fetch";
 
 
 
@@ -28,9 +28,9 @@ const singleNoteikumiPage = async ({params}) => {
           {singleRule.map((rule) => (
             <>
               {rule.subpoints.length > 0 ? (
-                <div style={{backgroundColor: '#f2f2f2'}} className="collapse collapse-arrow bg-base-300 mt-5">
+                <div id={rule._id} style={{backgroundColor: '#f2f2f2'}} className="collapse collapse-arrow bg-base-300 mt-5">
                   <input type="radio" name="my-accordion-2" defaultChecked />
-                  <div className="collapse-title text-xl font-bold">{rule.number}. {rule.text}</div>
+                  <div  className="collapse-title text-xl font-bold">{rule.number}. {rule.text}</div>
                   <div className="collapse-content rounded-xl ">
                     {rule.subpoints?.map((subpoint, i) => (
                       <h4 key={i} className={'text-xl  font-medium mt-3 '}>{i + 1}. {subpoint.text}</h4>
@@ -39,7 +39,7 @@ const singleNoteikumiPage = async ({params}) => {
                   </div>
                 </div>
               ) : (
-                <div style={{backgroundColor: '#f2f2f2'}} className="collapse  bg-base-300 mt-5">
+                <div id={rule._id} style={{backgroundColor: '#f2f2f2'}} className="collapse  bg-base-300 mt-5">
                   <div className="collapse-title text-xl font-bold">{rule.number}. {rule.text}</div>
                 </div>
 
