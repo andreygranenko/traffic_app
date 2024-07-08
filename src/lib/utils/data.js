@@ -48,3 +48,52 @@ export const pants = [
   '9',
   '10'
 ]
+
+
+export const signKeys = {
+  'bridinajuma-zimes': 'first_group',
+  'prieksrocibas-zimes': 'second_group',
+  'aizlieguma-zimes': 'third_group',
+  'rikojuma-zimes': 'fourth_group',
+  'noradijuma-zimes': 'fifth_group',
+  'servisa-zimes': 'sixth_group',
+  'virzienu-raditaji-un-informacijas-zimes': 'seventh_group',
+  'papildzimes': 'eighth_group',
+}
+
+export const signGroups = [
+  'bridinajuma-zimes',
+  'prieksrocibas-zimes',
+  'aizlieguma-zimes',
+  'rikojuma-zimes',
+  'noradijuma-zimes',
+  'servisa-zimes',
+  'virzienu-raditaji-un-informacijas-zimes',
+  'papildzimes',
+]
+
+
+export function getSignType(number) {
+  const firstDigit = number.toString()[0];
+
+  switch (firstDigit) {
+    case '1':
+      return 'Brīdinājuma zīmes';
+    case '2':
+      return 'Priekšrocības zīmes';
+    case '3':
+      return 'Aizlieguma zīmes';
+    case '4':
+      return 'Rīkojuma zīmes';
+    case '5':
+      return 'Norādījuma zīmes';
+    case '6':
+      return 'Servisa zīmes';
+    case '7':
+      return 'Virzienu rādītāji un informācijas zīmes';
+    case '8':
+      return 'Papildzīmes';
+    default:
+      return 'Unknown';
+  }
+}
