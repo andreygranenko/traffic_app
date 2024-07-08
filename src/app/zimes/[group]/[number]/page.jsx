@@ -10,8 +10,13 @@ const fetchSign = async (number, collection) => {
     const data = await response.json();
     return data;
   } else {
-    console.log(response.statusText);
-    alert('Failed to fetch data!');
+    if (typeof window !== "undefined") {
+      // Client-side execution
+      alert('Failed to fetch data!');
+    } else {
+      // Server-side execution
+      console.log(response.statusText);
+    }
   }
 };
 
@@ -32,7 +37,6 @@ const SingleSignPage = async ({params}) => {
 
   const sign = await fetchSign(number, collection);
   const oneSign = sign[0];
-  console.log(sign, 'checking');
   return (
     <div style={{minHeight: 'calc(100vh - 288px)'}} className={'container px-8 md:px-10 mx-auto py-6 '}>
       <div className={'flex flex-col lg:flex-row-reverse gap-12 lg:gap-5'}>

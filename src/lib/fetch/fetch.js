@@ -5,8 +5,13 @@ export const fetchSingleRule = async (collection) => {
     const data = await response.json();
     return data;
   } else {
-    console.log(response.statusText)
-    alert('Failed to fetch data!');
+    if (typeof window !== "undefined") {
+      // Client-side execution
+      alert('Failed to fetch data!');
+    } else {
+      // Server-side execution
+      console.log(response.statusText);
+    }
   }
 }
 
@@ -17,7 +22,12 @@ export const fetchAllRules = async () => {
     const data = await response.json();
     return data;
   } else {
-    console.log(response.statusText)
-    alert('Failed to fetch data!');
+    if (typeof window !== "undefined") {
+      // Client-side execution
+      alert('Failed to fetch data!');
+    } else {
+      // Server-side execution
+      console.log(response.statusText);
+    }
   }
 };

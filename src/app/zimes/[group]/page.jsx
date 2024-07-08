@@ -36,8 +36,13 @@ const fetchAllData = async (collection) => {
     const data = await response.json();
     return data;
   } else {
-    console.log(response.statusText);
-    alert('Failed to fetch data!');
+    if (typeof window !== "undefined") {
+      // Client-side execution
+      alert('Failed to fetch data!');
+    } else {
+      // Server-side execution
+      console.log(response.statusText);
+    }
   }
 };
 
@@ -70,17 +75,20 @@ const SingleZimesGroupPage = async ({params}) => {
   const currentGroupIndex = groups.indexOf(params.group);
   const collection = keys[params.group];
   const signs = await fetchAllData(collection);
-  let counter = 0;
-  signs.forEach((sign) => {
-    if (!sign.img_path) {
-      console.log('getting image path')
-      console.log(sign)
-      counter++;
-    }
-  }
-  );
 
-  console.log('counter', counter);
+
+  // for document undefined bug
+  // let counter = 0;
+  // signs.forEach((sign) => {
+  //   if (!sign.img_path) {
+  //     console.log('getting image path')
+  //     console.log(sign)
+  //     counter++;
+  //   }
+  // }
+  // );
+  //
+  // console.log('counter', counter);
 
 
   return (
