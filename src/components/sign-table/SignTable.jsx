@@ -8,7 +8,6 @@ import Link from "next/link";
 import Pagination from "@/components/pagination/Pagination";
 import Skeleton from "@/components/skeletons/TableSkeleton";
 const SignTable = ({params}) => {
-
   const [signs, setSigns] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -24,6 +23,7 @@ const SignTable = ({params}) => {
       setSigns(data.signs); // Assuming the API response includes a `signs` array
       setTotalPages(Math.ceil(data.total / itemsPerPage)); // Assuming the API response includes a `total` count of items
       setLoading(false);
+      window.scrollTo(0, 0);
     };
 
     fetchData();
@@ -31,7 +31,7 @@ const SignTable = ({params}) => {
 
   return (
     <>
-      <div className="overflow-x-auto">
+      <div className=" overflow-x-auto">
         {
           loading ? (
             <Skeleton/>
