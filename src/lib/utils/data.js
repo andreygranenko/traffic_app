@@ -72,6 +72,18 @@ export const signGroups = [
   'papildzimes',
 ]
 
+export const signGroupName = {
+  'bridinajuma-zimes': 'Brīdinājuma zīmes',
+  'prieksrocibas-zimes': 'Priekšrocības zīmes',
+  'aizlieguma-zimes': 'Aizlieguma zīmes',
+  'rikojuma-zimes': 'Rīkojuma zīmes',
+  'noradijuma-zimes': 'Norādījuma zīmes',
+  'servisa-zimes': 'Servisa zīmes',
+  'virzienu-raditaji-un-informacijas-zimes': 'Virzienu rādītāji un informācijas zīmes',
+  'papildzimes': 'Papildzīmes',
+
+}
+
 
 export function getSignType(number) {
   const firstDigit = number.toString()[0];

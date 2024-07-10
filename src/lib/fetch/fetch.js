@@ -43,7 +43,7 @@ export const fetchSignGroup = async (collection, page = 1, limit = 10) => {
   } else {
     if (typeof window !== "undefined") {
       // Client-side execution
-      alert('Failed to fetch data!');
+      alert('Failed to fetch data !\n' + response.statusText);
     } else {
       // Server-side execution
       console.log(response.statusText);
