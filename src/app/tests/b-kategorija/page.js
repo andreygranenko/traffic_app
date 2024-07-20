@@ -1,7 +1,7 @@
 'use client';
 import {useState} from "react";
 import {quiz} from "@/lib/utils/data";
-
+import Image from "next/image";
 const QuizPage = () => {
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState('');
@@ -57,41 +57,46 @@ const QuizPage = () => {
   }
 
   return (
-    <div className={'container flex flex-col justify-center items-center'}>
+    <div style={{minHeight: 'calc(100vh - 288px)'}} className={'container px-8 xl:px-10 '}>
       <h1 className={'text-5xl'}>Quiz Page</h1>
       <div>
-        <h2 className={'text-3xl'}>
-          Question: {activeQuestion + 1}
-          <span>/{questions.length}</span>
-        </h2>
+        {/*<h2 className={'text-3xl'}>*/}
+        {/*  Question: {activeQuestion + 1}*/}
+        {/*  <span>/{questions.length}</span>*/}
+        {/*</h2>*/}
       </div>
       <div>
         {!showResult ? (
-          <div className={'quiz-container mx-auto'}>
-            <h3>{question}</h3>
-            {answers.map((answer, index) => (
-              <li
-                key={answer.id}
-                onClick={() => onAnswerSelected(answer, index)}
-                className={
-                  selectedAnswerIndex === index ? 'li-selected' : 'li-hover'
-                }>
-                <span>{answer}</span>
-              </li>
-            ))}
-            {checked ? (
-              <button onClick={nextQuestion} className={'bg-green-500 hover:bg-green-700 active:bg-green-800 px-4 py-2 rounded-md text-white'} >
-                {
-                  activeQuestion === questions.length - 1 ? 'Finish' : 'Next'
-                }
-              </button>
-            ) : (
-              <button onClick={nextQuestion} disabled={true} className={'bg-gray-300 px-4 py-2 rounded-md cursor-not-allowed opacity-50" disabled '}>
-                {
-                  activeQuestion === questions.length - 1 ? 'Finish' : 'Next'
-                }
-              </button>
-            )}
+          <div className={'quiz-container flex'}>
+            <div className={'w-1/2'}>
+              <Image src={'/csdd.png'} alt='sd' width={778} height={330}/>
+              <h3>{question}</h3>
+            </div>
+            <div className={'w-1/2'}>
+              {answers.map((answer, index) => (
+                <li
+                  key={answer.id}
+                  onClick={() => onAnswerSelected(answer, index)}
+                  className={
+                    selectedAnswerIndex === index ? 'li-selected list-none' : 'li-hover list-none'
+                  }>
+                  <span>{answer}</span>
+                </li>
+              ))}
+              {checked ? (
+                <button onClick={nextQuestion} className={'bg-green-500 hover:bg-green-700 active:bg-green-800 px-4 py-2 rounded-md text-white'} >
+                  {
+                    activeQuestion === questions.length - 1 ? 'Finish' : 'Next'
+                  }
+                </button>
+              ) : (
+                <button onClick={nextQuestion} disabled={true} className={'bg-gray-300 px-4 py-2 rounded-md cursor-not-allowed opacity-50" disabled '}>
+                  {
+                    activeQuestion === questions.length - 1 ? 'Finish' : 'Next'
+                  }
+                </button>
+              )}
+            </div>
           </div>
         ) : (
           <div className={'quiz-container'}>
