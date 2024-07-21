@@ -118,7 +118,7 @@ export const quiz = {
     {
       id: 1,
       question: 'What is the capital of France?',
-      answers: ['Madrid', 'Paris', 'Rome', 'Berlin'],
+      answers: ['MadridMadrid MadridMadridMadridMadrid MadridMadridMadridM adridMadridMadr idMadridMaridMadri dMadrid Madrid MadridMad ridMadridMadrid', 'Paris', 'Rome', 'Berlin'],
       correctAnswer: 'Paris',
     },
     {
