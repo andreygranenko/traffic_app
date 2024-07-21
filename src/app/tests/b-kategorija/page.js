@@ -82,11 +82,15 @@ const QuizPage = () => {
               <div className={'lg:w-1/2 flex flex-col gap-5'}>
                 {answers.map((answer, index) => (
                   <div
-                    key={answer.id}
+                    key={index}
                     onClick={() => onAnswerSelected(answer, index)}
                     className="flex overflow-y-auto justify-between bg-base-300 p-3 rounded-xl items-center ">
                     <span className={'break-all'}>{answer}</span>
-                    <input type="checkbox"  checked={selectedAnswerIndex === index} className="checkbox" />
+                    <input
+                      type="checkbox"
+                      checked={selectedAnswerIndex === index}
+                      onChange={() => onAnswerSelected(answer, index)}
+                      className="checkbox" />
                   </div>
                 ))}
                 {checked ? (
@@ -169,16 +173,18 @@ const QuizPage = () => {
     return (
       <div style={{minHeight: 'calc(100vh - 288px)'}} className={'container px-8 xl:px-10 py-8 mx-auto'}>
         <div className={'bg-base-300 rounded-xl flex flex-col-reverse gap-5 lg:flex-row lg:justify-around p-5 lg:p-10 w-10/12 mx-auto'}>
-          <div className={'text-2xl font-bold flex-1 break-normal flex items-center'}>
-            Tests, lai sagatavotos eksāmenam CSDD B kategorijai.
-            Satur piemērus par jautājumiem, kurus var uzdot eksāmenā, tie var atšķirties
+          <div className={' flex-1 break-normal flex flex-col justify-around gap-3'}>
+            <h3 className={'text-4xl uppercase font-bold'}>B kategorijas sagatavošanas tests</h3>
+            <p className={'text-lg'}>
+              Tests, lai sagatavotos eksāmenam CSDD B kategorijai.
+              Satur piemērus par jautājumiem, kurus var uzdot eksāmenā, tie var atšķirties
+            </p>
+            <button onClick={() => setStart(true)} className={'btn btn-neutral w-32'}>Sākt</button>
+
           </div>
           <div className={'flex-1'}>
             <Image className={'rounded-xl'} src={'https://images.pexels.com/photos/6683673/pexels-photo-6683673.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'} alt={'quiz'} width={594} height={366}/>
           </div>
-        </div>
-        <div className={'flex justify-center mt-5'}>
-          <button onClick={() => setStart(true)} className={'btn btn-neutral w-32'}>Sākt</button>
         </div>
       </div>
     )

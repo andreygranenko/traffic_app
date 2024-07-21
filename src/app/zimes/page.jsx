@@ -27,11 +27,11 @@ const ZimesPage = async () => {
     <div className={'container bg-white mx-auto pt-5 px-8 xl:px-10 pb-8'}>
       <h2 className={'text-center text-2xl font-bold'}>Ceļa zīmes</h2>
       <h3 className={'text-xl font-bold mt-8'}>Satura rādītājs</h3>
-      <div className={'flex items-start md:justify-between mt-8 gap-x-10 gap-y-10 flex-wrap'}>
+      <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start md:justify-between mt-8 gap-x-10 gap-y-10 flex-wrap'}>
         {
           allSigns && allSigns.map(({number, title, path, description, img_path}) => (
 
-            <Link href={path} key={number} className="card bg-white p-5 card-compact w-full md:w-5/12 xl:w-1/4 transition-all duration-300 hover:scale-110">
+            <Link href={path} key={number} className="card bg-white p-5 card-compact w-full  transition-all duration-300 hover:scale-110">
               <figure className={'h-52'} >
                 <Image
                   className={'m'}
