@@ -74,12 +74,12 @@ const QuizPage = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ ease: 'easeInOut', duration: 0.75 }} className={`quiz-container flex gap-20 justify-between mt-5 ` }>
-              <div className={'w-1/2'}>
+              transition={{ ease: 'easeInOut', duration: 0.75 }} className={`quiz-container  flex flex-col lg:flex-row gap-5 lg:gap-20 lg:justify-between mt-5 ` }>
+              <div className={'lg:w-1/2'}>
                 <Image src={'/csdd.png'} alt='sd' width={778} height={330}/>
                 <h3 className={'text-3xl font-bold mt-5'}>{question}</h3>
               </div>
-              <div className={'w-1/2 flex flex-col gap-5'}>
+              <div className={'lg:w-1/2 flex flex-col gap-5'}>
                 {answers.map((answer, index) => (
                   <div
                     key={answer.id}
@@ -142,7 +142,7 @@ const QuizPage = () => {
 
                   )
               }
-              <div className={`flex justify-center gap-10 transition-all duration-500 ${visible ? 'opacity-100 ' : 'opacity-0 '}`}>
+              <div className={`flex flex-col sm:flex-row justify-center gap-10 transition-all duration-500 ${visible ? 'opacity-100 ' : 'opacity-0 '}`}>
                 <div className={'flex flex-col items-center bg-base-300 p-5 rounded-xl'}>
                   <h4 className={'font-bold'}>JŪSU REZULTĀTS</h4>
                   <h3 className={'text-2xl'}>{(result.score / 25) * 100}%</h3>
@@ -157,7 +157,7 @@ const QuizPage = () => {
                   <p className={' uppercase'}>PAREIZĀS ATBILDES SKAITS: {result.correctAnswers}</p>
                 </div>
               </div>
-              <div className={'flex justify-center '}>
+              <div className={'flex justify-center mt-5 '}>
                 <button className={'btn btn-neutral '} onClick={() => window.location.reload()}>Restart</button>
               </div>
             </div>
@@ -168,7 +168,7 @@ const QuizPage = () => {
   } else {
     return (
       <div style={{minHeight: 'calc(100vh - 288px)'}} className={'container px-8 xl:px-10 py-8 mx-auto'}>
-        <div className={'bg-base-300 rounded-xl flex justify-around p-10 w-10/12 mx-auto'}>
+        <div className={'bg-base-300 rounded-xl flex flex-col-reverse gap-5 lg:flex-row lg:justify-around p-5 lg:p-10 w-10/12 mx-auto'}>
           <div className={'text-2xl font-bold flex-1 break-normal flex items-center'}>
             Tests, lai sagatavotos eksāmenam CSDD B kategorijai.
             Satur piemērus par jautājumiem, kurus var uzdot eksāmenā, tie var atšķirties
