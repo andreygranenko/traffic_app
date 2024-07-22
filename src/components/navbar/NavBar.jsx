@@ -44,7 +44,7 @@ const NavBar = () => {
           <li>
             <details>
               <summary>Tests</summary>
-              <ul className="p-2">
+              <ul className="p-2 z-50">
                 <li><Link href={'/tests/b-kategorija'}>B kategorija</Link></li>
                 <li><a>C kategorija</a></li>
               </ul>

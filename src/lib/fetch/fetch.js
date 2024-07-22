@@ -50,3 +50,20 @@ export const fetchSignGroup = async (collection, page = 1, limit = 10) => {
     }
   }
 };
+
+
+export const fetchQuizQuestions = async (collection) => {
+  const response = await fetch(`http://localhost:3000/api/getquizquestions?collection=${collection}`);
+
+  if (response.ok) {
+    return await response.json();
+  } else {
+    if (typeof window !== "undefined") {
+      // Client-side execution
+      alert('Failed to fetch data !\n' + response.statusText);
+    } else {
+      // Server-side execution
+      console.log(response.statusText);
+    }
+  }
+}
