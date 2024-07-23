@@ -2,6 +2,20 @@ import {console} from "next/dist/compiled/@edge-runtime/primitives";
 import Image from "next/image";
 import {img} from "@/lib/utils/encoded";
 import {firstDigit} from "@/lib/utils/math";
+import {signGroupName, singleSignKeys} from "@/lib/utils/data";
+
+
+export const generateMetadata = async ({params}) => {
+  const {group, number} = params;
+  const collection = singleSignKeys[group];
+  const sign = await fetchSign(number, collection);
+  const oneSign = sign[0];
+
+  return {
+    title: `${number}. ${oneSign.title} ceļa zīme `,
+    description: `Ceļa zīme ${number}. ${oneSign.title} no grupas ${signGroupName[group]} un ${oneSign.description}`
+  }
+}
 
 const fetchSign = async (number, collection) => {
   const response = await fetch(`http://localhost:3000/api/getsign?number=${number}&collection=${collection}`);
@@ -21,19 +35,10 @@ const fetchSign = async (number, collection) => {
 };
 
 const SingleSignPage = async ({params}) => {
-  const keys = {
-    'bridinajuma-zimes': 'first_group',
-    'prieksrocibas-zimes': 'second_group',
-    'aizlieguma-zimes': 'third_group',
-    'rikojuma-zimes': 'fourth_group',
-    'noradijuma-zimes': 'fifth_group',
-    'servisa-zimes': 'sixth_group',
-    'virzienu-raditaji-un-informacijas-zimes': 'seventh_group',
-    'papildzimes': 'eighth_group',
-  }
+
   const {group, number} = params;
 
-  const collection = keys[group];
+  const collection = singleSignKeys[group];
 
   const sign = await fetchSign(number, collection);
   const oneSign = sign[0];

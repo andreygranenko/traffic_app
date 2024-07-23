@@ -11,6 +11,8 @@ function shuffle(array = []) {
   return arrayCopy.sort(() => Math.random() - 0.5);
 }
 
+
+
 const QuizPage = () => {
   const [start, setStart] = useState(false);
   const [activeQuestion, setActiveQuestion] = useState(0);

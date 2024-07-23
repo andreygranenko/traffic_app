@@ -2,7 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import {fetchAllRules} from "@/lib/fetch/fetch";
 
-
+export const metadata = {
+  title: 'Ceļu satiksmes noteikumi',
+  description: 'Ceļu satiksmes noteikumi - spēkā esošie satiksmes noteikumi Latvijā. Iepazīstieties ar galvenajiem noteikumiem, izmaiņām un prasībām autovadītājiem, gājējiem un velosipēdistiem.',
+}
 
 const NoteikumuPage = async () => {
   const allData = await fetchAllRules();

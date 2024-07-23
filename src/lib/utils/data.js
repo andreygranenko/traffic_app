@@ -158,3 +158,14 @@ export const quiz = {
     },
   ],
 };
+
+export const singleSignKeys = {
+  'bridinajuma-zimes': 'first_group',
+  'prieksrocibas-zimes': 'second_group',
+  'aizlieguma-zimes': 'third_group',
+  'rikojuma-zimes': 'fourth_group',
+  'noradijuma-zimes': 'fifth_group',
+  'servisa-zimes': 'sixth_group',
+  'virzienu-raditaji-un-informacijas-zimes': 'seventh_group',
+  'papildzimes': 'eighth_group',
+}

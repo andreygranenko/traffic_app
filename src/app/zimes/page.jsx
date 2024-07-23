@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const getAllSigns = async () => {
+export const getAllSigns = async () => {
   const response = await fetch('http://localhost:3000/api/getallsigns');
 
   if (response.ok) {
@@ -18,6 +18,11 @@ const getAllSigns = async () => {
     }
 
   }
+}
+
+export const metadata = {
+  title: 'Ceļa zīmes',
+  description: 'Uzziniet par ceļu satiksmes zīmju grupām Latvijā, tostarp brīdinājuma zīmes, aizlieguma zīmes, rīkojuma zīmes, informācijas zīmes un norāžu zīmes. Detalizēta informācija par ceļa zīmēm, to nozīmi un pielietojumu ceļu satiksmē.'
 }
 
 const ZimesPage = async () => {

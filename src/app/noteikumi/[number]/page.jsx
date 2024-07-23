@@ -4,6 +4,17 @@ import Link from "next/link";
 import {fetchAllRules, fetchSingleRule} from "@/lib/fetch/fetch";
 
 
+export const generateMetadata = async ({params}) => {
+  const {number} = params;
+  const collection = noteikumiKeys[number];
+  const singleRule = await fetchSingleRule(collection);
+  const title = noteikumiTitles[number];
+  const desc = singleRule.map((rule) => rule.brief_item_desc ? rule.brief_item_desc : rule.text).join(' ');
+  return {
+    title: `${number}. pants - ${title}`,
+    description: desc
+  };
+}
 
 const singleNoteikumiPage = async ({params}) => {
   const {number} = params;

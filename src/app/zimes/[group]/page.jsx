@@ -1,11 +1,22 @@
 import Link from "next/link";
-import {signGroupName, signGroups, signKeys} from "@/lib/utils/data";
+import {signGroupName, signGroups} from "@/lib/utils/data";
 import SignTable from "@/components/sign-table/SignTable";
+import {getAllSigns} from "@/app/zimes/page";
 
 
 
 
+export const generateMetadata = async ({params}) => {
+  const groupName = signGroupName[params.group];
+  const currentGroupIndex = signGroups.indexOf(params.group);
+  const allSigns = await getAllSigns();
 
+
+  return {
+    title: groupName,
+    description: `Satur satur informāciju par ceļa zīmēm, kas ${allSigns[currentGroupIndex].description}`
+  }
+}
 
 const SingleZimesGroupPage = async ({params}) => {
 
