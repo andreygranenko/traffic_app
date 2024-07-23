@@ -1,7 +1,7 @@
-import {noteikumiKeys, noteikumiTitles, pants} from "../../../lib/utils/data";
+import {noteikumiKeys, noteikumiTitles, pants} from "@/lib/utils/data";
 import Image from "next/image";
 import Link from "next/link";
-import {fetchAllRules, fetchSingleRule} from "../../../lib/fetch/fetch";
+import {fetchAllRules, fetchSingleRule} from "@/lib/fetch/fetch";
 
 
 

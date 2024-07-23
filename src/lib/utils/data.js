@@ -11,11 +11,13 @@ export const noteikumiKeys = {
   '8': '8_transportlidzeklu_izkartojums_uz_brauktuves',
   '9': '9_brauksanas_atrums_distance_un_intervals',
   '10': '10_apdzisana_samainisana',
+  '11': '11_apstasanas_un_stavesana',
+  '12': '12_brauksana_krustojumos',
+  '12.1': '12.1_regulejami_krustojumi',
+  '12.2': '12.2_neregulejami_krustojumi',
+  '13': '13_celu_satiksme_dzivojamas_zonas',
+  '14': '14_gaj_parej_un_pieturas',
   // finish this
-  '11': 'celu_kustibas_regulejums_uz_celu',
-  '12': 'celu_kustibas_regulejums_kustiba',
-  '13': 'celu_kustibas_regulejums_stavoklis',
-  '14': 'celu_kustibas_regulejums_vadiba',
 
 }
 
@@ -25,16 +27,19 @@ export const noteikumiTitles = {
   '3': 'Transportlīdzekļu vadītāju pienākumi',
   '4': 'Transportlīdzekļa vadītāja pienākumi īpašos gadījumos',
   '5': 'Transportlīdzekļa vadītāja rīcība pēc ceļu satiksmes negadījuma',
+  '6': 'Ceļu satiksmes regulēšana',
+  '7': 'Braukšanas sākšana un braukšanas virziena maiņa',
+  '8': 'Transportlīdzekļu izkārtojums uz brauktuves',
+  '9': 'Braukšanas ātrums, distance un intervāls',
+  '10': 'Apdzīšana, samainīšanās ar pretim braucošu transportlīdzekli un apsteigšana',
+  '11': 'Apstāšanās un stāvēšana',
+  '12': 'Braukšana krustojumos',
+  '12.1': 'Regulējami krustojumi',
+  '12.2': 'Neregulējami krustojumi',
+  '13': 'Ceļu satiksme dzīvojamās zonās',
+  '14': 'Gājēju pārejas un pasažieru sabiedrisko transportlīdzekļu pieturas',
   // finish this
-  '6': 'Ceļu kustības',
-  '7': 'Ceļu kustības ierobežošana',
-  '8': 'Ceļu kustības regulējums',
-  '9': 'Ceļu kustības drošība',
-  '10': 'Ceļu kustības vadība',
-  '11': 'Ceļu kustības regulējums uz ceļu',
-  '12': 'Ceļu kustības regulējums kustība',
-  '13': 'Ceļu kustības regulējums stāvoklis',
-  '14': 'Ceļu kustības regulējums vadība',
+
 }
 
 export const pants = [
@@ -47,7 +52,13 @@ export const pants = [
   '7',
   '8',
   '9',
-  '10'
+  '10',
+  '11',
+  '12',
+  '12.1',
+  '12.2',
+  '13',
+  '14'
 ]
 
 

@@ -7,7 +7,10 @@ export const GET = async (request) => {
   try {
     const database = client.db('traffic_rules');
     const collection = database.collection('traffic_rules_groups');
-    const allData = await collection.find({}).toArray();
+    const allData = await collection
+      .find({})
+      .sort({number: 1})
+      .toArray();
 
     return NextResponse.json(allData);
   } catch (error) {
