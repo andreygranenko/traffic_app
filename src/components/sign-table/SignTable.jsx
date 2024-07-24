@@ -29,6 +29,7 @@ const SignTable = ({params}) => {
     fetchData();
   }, [params.group, currentPage]);
 
+
   return (
     <>
       <div className=" overflow-x-auto">

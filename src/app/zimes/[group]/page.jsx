@@ -20,7 +20,6 @@ export const generateMetadata = async ({params}) => {
 
 const SingleZimesGroupPage = async ({params}) => {
 
-
   const groupName = signGroupName[params.group];
   const currentGroupIndex = signGroups.indexOf(params.group);
 
