@@ -16,10 +16,10 @@ const NoteikumuPage = async () => {
     <div className={'container  mx-auto pt-5 px-8 xl:px-10 pb-8'}>
       <h2 className={'text-center text-2xl font-bold'}> Ceļu satiksmes noteikumi </h2>
       <h3 className={'text-xl font-bold mt-8'}>Satura rādītājs</h3>
-      <div className={'grid grid-cols-3 items-start lg:justify-between mt-8 gap-x-10 gap-y-10 flex-wrap'}>
+      <div style={{justifyItems: 'stretch'}} className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  items-start md:justify-between mt-8 gap-x-20 gap-y-10 flex-wrap'}>
         {
           allData && allData.map(({number, title, path, description}) => (
-            <Link href={`/noteikumi/${number}`} key={number} className={'transition-all duration-300 hover:scale-110 overflow-hidden rounded-md flex flex-col w-4/5   min-h-64 gap-3 relative'}>
+            <Link href={`/noteikumi/${number}`} key={number} className={'transition-all duration-300 hover:scale-110 overflow-hidden rounded-md flex flex-col w-full   min-h-64 gap-3 relative'}>
               <Image
                 className={'rounded-md w-full object-cover '}
                 src={path + '.png'}
