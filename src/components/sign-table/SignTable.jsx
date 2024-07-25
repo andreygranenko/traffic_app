@@ -4,9 +4,9 @@ import {getSignType, signKeys} from "@/lib/utils/data";
 import {fetchSignGroup} from "@/lib/fetch/fetch";
 import Image from "next/image";
 import {firstDigit} from "@/lib/utils/math";
-import Link from "next/link";
 import Pagination from "@/components/pagination/Pagination";
 import Skeleton from "@/components/skeletons/TableSkeleton";
+import SingleSign from "@/components/single-sign/SingleSign";
 const SignTable = ({params}) => {
   const [signs, setSigns] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -92,7 +92,8 @@ const SignTable = ({params}) => {
                   </td>
                   <td>{getSignType(sign_num)}</td>
                   <th>
-                    <Link href={`/zimes/${params.group}/${sign_num}`} className="btn btn-ghost btn-xs">details</Link>
+                    <SingleSign sign_num={sign_num} img_path={img_path} title={title} description={description} collection={signKeys[params.group]}/>
+                    {/*<Link href={`/zimes/${params.group}/${sign_num}`} className="btn btn-ghost btn-xs">details</Link>*/}
                   </th>
                 </tr>
               ))}
