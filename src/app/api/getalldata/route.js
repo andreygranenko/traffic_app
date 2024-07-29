@@ -5,8 +5,8 @@ export const GET = async (request) => {
   const client = await clientPromise;
 
   try {
-    const database = client.db('traffic_rules');
-    const collection = database.collection('traffic_rules_groups');
+    const database = client.db('traffic_rules_scrap');
+    const collection = database.collection('rules_groups');
     const allData = await collection
       .find({})
       .sort({number: 1})

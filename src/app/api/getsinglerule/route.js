@@ -8,8 +8,8 @@ export const GET = async (request) => {
   try {
     await client.connect();
     const { searchParams } = new URL(request.url);
-    const collectionName = searchParams.get('collection') || 'visparigi_noteikumi';
-    const database = client.db('traffic_rules');
+    const collectionName = searchParams.get('collection') || '1';
+    const database = client.db('traffic_rules_scrap');
     const collection = database.collection(collectionName);
     const allData = await collection.find({}).sort({number: 1}).toArray();
 
