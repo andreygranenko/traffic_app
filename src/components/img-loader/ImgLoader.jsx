@@ -9,7 +9,6 @@ const RuleImage = ({ currentPantIndex, allRules }) => {
   console.log('rerender')
   const imageUrl = `/noteikumi/${allRules[currentPantIndex].number}${allRules[currentPantIndex].number >= 15 ? '.jpg' : '.png'}`;
 
-  // const imageUrl = 'https://images.pexels.com/photos/5428833/pexels-photo-5428833.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2';
   useEffect(() => {
     if (firstLoad) {
       setFirstLoad(false);

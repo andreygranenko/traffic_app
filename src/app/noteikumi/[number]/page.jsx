@@ -6,13 +6,14 @@ import RuleImage from "@/components/img-loader/ImgLoader";
 
 export const generateMetadata = async ({params}) => {
   const {number} = params;
+  console.log('number for 15.1 ', number);
   const singleRule = await fetchSingleRule(number);
   const allRules = await fetchAllRules();
   const currentPantIndex = pants.indexOf(number);
   const title = allRules[currentPantIndex].title;
   const desc = singleRule.map((rule) => rule.brief_item_desc ? rule.brief_item_desc : rule.text).join(' ');
   return {
-    title: `${number}. pants - ${title}`,
+    title: `${number.replace('_', '.')}. pants - ${title}`,
     description: desc
   };
 }
@@ -21,8 +22,10 @@ const singleNoteikumiPage = async ({params}) => {
   const {number} = params;
   const singleRule = await fetchSingleRule(number);
   const allRules = await fetchAllRules();
-  const currentPantIndex = pants.indexOf(number);
+  const currentPantIndex = pants.indexOf(params.number);
   const title = allRules[currentPantIndex].title;
+  const subpointsArrtoFuck = ['212_1.1', '212_1.2', '212_1.3', '212_1.4', '212_7.1', '212_7.2', '212_7.3', '212_7.4', '212_7.5']
+
 
 
   return (
@@ -48,17 +51,17 @@ const singleNoteikumiPage = async ({params}) => {
               {rule.subpoints.length > 0 ? (
                 <div id={rule._id} style={{backgroundColor: '#f2f2f2'}} className="collapse collapse-arrow bg-base-300 mt-5">
                   <input type="radio" name="my-accordion-2" defaultChecked />
-                  <div  className="collapse-title text-xl font-bold">{rule.number}. {rule.text.replace(rule.number + '.', '')}</div>
+                  <div  className="collapse-title text-xl font-bold">{rule.number.toString().replace('_', '.')}. {rule.text.replace(rule.number.toString().replace('_', '.') + '.', '')}</div>
                   <div className="collapse-content rounded-xl ">
                     {rule.subpoints?.map((subpoint, i) => (
-                      <h4 key={i} className={'text-xl  font-medium mt-3 '}>{i + 1}. {subpoint.text.replace(subpoint.number + '.', '')}</h4>
+                      <h4 key={i} className={'text-xl  font-medium mt-3 '}>{i + 1}. {subpointsArrtoFuck.includes(subpoint.number) ? subpoint.text.slice(8) : subpoint.text.replace(subpoint.number + '.', '')}</h4>
 
                     ))}
                   </div>
                 </div>
               ) : (
                 <div id={rule._id} style={{backgroundColor: '#f2f2f2'}} className="collapse  bg-base-300 mt-5">
-                  <div className="collapse-title text-xl font-bold">{rule.number}. {rule.text.replace(rule.number + '.', '')}</div>
+                  <div className="collapse-title text-xl font-bold">{rule.number.toString().replace('_', '.')}. {rule.text.replace(rule.number.toString().replace('_', '.') + '.', '')}</div>
                 </div>
 
 
@@ -74,7 +77,7 @@ const singleNoteikumiPage = async ({params}) => {
         </div>
         <div className={'w-4/12 flex flex-col gap-10'}>
           <div style={{backgroundColor: '#f2f2f2'}} className={'bg-base-300 p-5 rounded-xl'}>
-            <h2 className={'text-4xl font-bold'}>{number}. pants</h2>
+            <h2 className={'text-4xl font-bold'}>{number.replace('_', '.')}. pants</h2>
             <h2 className={'text-4xl font-bold'}>{title}</h2>
           </div>
           <div style={{backgroundColor: '#f2f2f2'}} className={'bg-base-300 p-8 rounded-xl'}>
