@@ -6,7 +6,6 @@ import RuleImage from "@/components/img-loader/ImgLoader";
 
 export const generateMetadata = async ({params}) => {
   const {number} = params;
-  console.log('number for 15.1 ', number);
   const singleRule = await fetchSingleRule(number);
   const allRules = await fetchAllRules();
   const currentPantIndex = pants.indexOf(number);
@@ -36,8 +35,8 @@ const singleNoteikumiPage = async ({params}) => {
         {currentPantIndex < pants.length - 1 ? <Link href={`/noteikumi/${pants[currentPantIndex + 1]}`} className="btn btn-sm ">Nākamais pants</Link> :
           <button  className={'btn-disabled btn btn-sm'}>Nākamā grupa</button>}
       </div>
-      <div className={'flex gap-10'}>
-        <div className={'w-8/12 relative scroll-smooth'}>
+      <div className={'flex flex-col-reverse lg:flex-row gap-10'}>
+        <div className={'w-full lg:w-8/12 relative scroll-smooth'}>
           <RuleImage currentPantIndex={currentPantIndex} allRules={allRules}/>
           {/*<Image*/}
           {/*  width={2000}*/}
@@ -75,10 +74,10 @@ const singleNoteikumiPage = async ({params}) => {
           ))}
 
         </div>
-        <div className={'w-4/12 flex flex-col gap-10'}>
+        <div className={'w-full lg:w-4/12 flex flex-col gap-10'}>
           <div style={{backgroundColor: '#f2f2f2'}} className={'bg-base-300 p-5 rounded-xl'}>
-            <h2 className={'text-4xl font-bold'}>{number.replace('_', '.')}. pants</h2>
-            <h2 className={'text-4xl font-bold'}>{title}</h2>
+            <h2 className={'text-2xl lg:text-4xl font-bold'}>{number.replace('_', '.')}. pants</h2>
+            <h2 className={'text-2xl lg:text-4xl font-bold break-normal'}>{title}</h2>
           </div>
           <div style={{backgroundColor: '#f2f2f2'}} className={'bg-base-300 p-8 rounded-xl'}>
             <h4 className={'text-xl font-bold'}>ŠAJĀ PANTĀ</h4>
