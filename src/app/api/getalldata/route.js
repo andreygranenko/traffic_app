@@ -15,6 +15,7 @@ export const GET = async (request) => {
     return NextResponse.json(allData);
   } catch (error) {
     console.log(error);
+    return NextResponse.error(new Error('Internal Server Error'));
   } finally {
     await client.close();
   }

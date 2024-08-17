@@ -1,5 +1,8 @@
 import { MongoClient } from 'mongodb';
 import {NextResponse} from "next/server";
+import {isDynamicServerError} from "next/dist/client/components/hooks-server-context";
+
+export const dynamic = 'force-dynamic';
 
 export const GET = async (request) => {
   const client = new MongoClient(process.env.MONGO);
@@ -27,6 +30,12 @@ export const GET = async (request) => {
 
     return NextResponse.json({ signs: allData, total: totalItems, totalPages });
   } catch (error) {
+    if (isDynamicServerError(error)) {
+      console.log('lool chill');``
+    } else {
+      console.log('not lol at all');
+
+    }
     console.log(error);
     return NextResponse.json({ error: 'Failed to fetch data' }, { status: 500 });
   } finally {
