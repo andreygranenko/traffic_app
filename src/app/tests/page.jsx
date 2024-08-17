@@ -6,3 +6,5 @@ const testPage = () => {
 
   )
 }
+
+export default testPage;

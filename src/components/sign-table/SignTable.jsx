@@ -4,7 +4,7 @@ import {getSignType, signKeys} from "@/lib/utils/data";
 import {fetchSignGroup} from "@/lib/fetch/fetch";
 import Image from "next/image";
 import {firstDigit} from "@/lib/utils/math";
-import Pagination from "@/components/pagination/Pagination";
+import Pagination from "@/components/pagination/pagination";
 import Skeleton from "@/components/skeletons/TableSkeleton";
 import SingleSign from "@/components/single-sign/SingleSign";
 const SignTable = ({params}) => {
