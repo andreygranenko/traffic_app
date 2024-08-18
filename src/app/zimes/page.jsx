@@ -2,7 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const getAllSigns = async () => {
-  const response = await fetch('http://localhost:3000/api/getallsigns');
+  const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+
+  const response = await fetch(`${baseUrl}/api/getallsigns`);
 
   if (response.ok) {
     const data = await response.json();

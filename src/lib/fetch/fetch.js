@@ -1,6 +1,7 @@
 
 export const fetchSingleRule = async (collection) => {
-  const response = await fetch(`http://localhost:3000/api/getsinglerule?collection=${collection}`);
+  const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+  const response = await fetch(`${baseUrl}/api/getsinglerule?collection=${collection}`);
 
   if (response.ok) {
     const data = await response.json();
@@ -17,7 +18,9 @@ export const fetchSingleRule = async (collection) => {
 }
 
 export const fetchAllRules = async () => {
-  const response = await fetch('http://localhost:3000/api/getalldata');
+  const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+
+  const response = await fetch(`${baseUrl}/api/getalldata`);
 
   if (response.ok) {
     const data = await response.json();
@@ -35,7 +38,8 @@ export const fetchAllRules = async () => {
 
 
 export const fetchSignGroup = async (collection, page = 1, limit = 10) => {
-  const response = await fetch(`http://localhost:3000/api/getsigngroup?collection=${collection}&page=${page}&limit=${limit}`);
+  const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+  const response = await fetch(`${baseUrl}/api/getsigngroup?collection=${collection}&page=${page}&limit=${limit}`);
 
   if (response.ok) {
     const data = await response.json();
@@ -53,7 +57,8 @@ export const fetchSignGroup = async (collection, page = 1, limit = 10) => {
 
 
 export const fetchQuizQuestions = async (collection) => {
-  const response = await fetch(`http://localhost:3000/api/getquizquestions?collection=${collection}`);
+  const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+  const response = await fetch(`${baseUrl}/api/getquizquestions?collection=${collection}`);
 
   if (response.ok) {
     return await response.json();

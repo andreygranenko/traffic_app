@@ -20,7 +20,8 @@ export const generateMetadata = async ({params}) => {
 }
 
 export const fetchSign = async (number, collection) => {
-  const response = await fetch(`http://localhost:3000/api/getsign?number=${number}&collection=${collection}`);
+  const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+  const response = await fetch(`${baseUrl}/api/getsign?number=${number}&collection=${collection}`);
 
   if (response.ok) {
     const data = await response.json();
