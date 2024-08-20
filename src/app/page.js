@@ -1,9 +1,13 @@
 import Image from "next/image";
 import Modal from "../components/modal/modal";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <meta name="google-site-verification" content="xhZSeP4jFoAsQKq45eZ9wT0NbGu0R_ehOM4cg5Ekhok" />
+      </Head>
       <div style={{minHeight: 'calc(100vh - 288px)'}} className={'container mx-auto py-10'}>
         <main className=" px-10 ">
           <div className=" flex flex-col lg:flex-row-reverse justify-center">
