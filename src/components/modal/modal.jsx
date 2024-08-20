@@ -30,7 +30,7 @@ const Modal = () => {
 
             </div>
             <div  id={'slide3'} className="carousel-item w-full relative">
-              <Link href={'/testi'}>
+              <Link href={'/tests/b-kategorija'}>
               <img
                 src="/testi.png"
                 className="w-full"
