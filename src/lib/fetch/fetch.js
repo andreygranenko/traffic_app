@@ -1,6 +1,6 @@
 
 export const fetchSingleRule = async (collection) => {
-  const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
   const response = await fetch(`${baseUrl}/api/getsinglerule?collection=${collection}`);
 
   if (response.ok) {
@@ -18,7 +18,7 @@ export const fetchSingleRule = async (collection) => {
 }
 
 export const fetchAllRules = async () => {
-  const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
   const response = await fetch(`${baseUrl}/api/getalldata`);
 
@@ -38,7 +38,7 @@ export const fetchAllRules = async () => {
 
 
 export const fetchSignGroup = async (collection, page = 1, limit = 10) => {
-  const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
   const response = await fetch(`${baseUrl}/api/getsigngroup?collection=${collection}&page=${page}&limit=${limit}`);
 
   if (response.ok) {
@@ -57,7 +57,7 @@ export const fetchSignGroup = async (collection, page = 1, limit = 10) => {
 
 
 export const fetchQuizQuestions = async (collection) => {
-  const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
   const response = await fetch(`${baseUrl}/api/getquizquestions?collection=${collection}`);
 
   if (response.ok) {

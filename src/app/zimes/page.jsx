@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const getAllSigns = async () => {
-  const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
   const response = await fetch(`${baseUrl}/api/getallsigns`);
 
