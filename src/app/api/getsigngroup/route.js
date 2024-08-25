@@ -28,7 +28,12 @@ export const GET = async (request) => {
       .limit(limit)
       .toArray();
 
-    return NextResponse.json({ signs: allData, total: totalItems, totalPages });
+    return NextResponse.json({ signs: allData, total: totalItems, totalPages }, {
+      headers: {
+        'Access-Control-Allow-Origin': 'https://www.eksamen.tech',
+      }
+
+    });
   } catch (error) {
     if (isDynamicServerError(error)) {
       console.log('lool chill');``
