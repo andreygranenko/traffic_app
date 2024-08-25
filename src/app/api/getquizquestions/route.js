@@ -13,7 +13,13 @@ export const GET = async (request) => {
     const collection = database.collection(collectionName);
     const allData = await collection.find({}).toArray();
 
-    return NextResponse.json(allData);
+    const response = NextResponse.json(allData, {
+      headers: {
+        'Access-Control-Allow-Origin': 'https://www.eksamen.tech',
+      }
+    });
+
+    return response;
   } catch (error) {
     console.log(error);
   } finally {
