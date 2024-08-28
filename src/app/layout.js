@@ -6,7 +6,10 @@ import NavBar from "../components/navbar/NavBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Eksāmenam Gatavs",
+  title: {
+    default: "CSDD Teorijas Eksāmenam Gatavs",
+    template: "%s - Eksāmenam Gatavs"
+  },
   description: "Ceļu satiksmes noteikumu un ceļa zīmju apguve, gatavošanās eksāmenam CSDD",
   meta: [
     { name: 'google-site-verification', content: 'xhZSeP4jFoAsQKq45eZ9wT0NbGu0R_ehOM4cg5Ekhok' }
