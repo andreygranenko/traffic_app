@@ -2,12 +2,19 @@ import Link from "next/link";
 import {signGroupName, signGroups} from "@/lib/utils/data";
 import SignTable from "@/components/sign-table/SignTable";
 import {getAllSigns} from "@/app/zimes/page";
+import {notFound} from "next/navigation";
 
 
 
 
 export const generateMetadata = async ({params}) => {
   const groupName = signGroupName[params.group];
+  if (!groupName) {
+    return {
+      title: '404 - Not found',
+      description: 'Šāda grupa neeksistē'
+    };
+  }
   const currentGroupIndex = signGroups.indexOf(params.group);
   const allSigns = await getAllSigns();
 
@@ -21,6 +28,9 @@ export const generateMetadata = async ({params}) => {
 const SingleZimesGroupPage = async ({params}) => {
 
   const groupName = signGroupName[params.group];
+  if (!groupName) {
+    notFound();
+  }
   const currentGroupIndex = signGroups.indexOf(params.group);
 
 

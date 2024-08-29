@@ -2,11 +2,18 @@ import { pants} from "@/lib/utils/data";
 import Link from "next/link";
 import {fetchAllRules, fetchSingleRule} from "@/lib/fetch/fetch";
 import RuleImage from "@/components/img-loader/ImgLoader";
+import {notFound} from "next/navigation";
 
 
 export const generateMetadata = async ({params}) => {
   const {number} = params;
   const singleRule = await fetchSingleRule(number);
+  if (singleRule.length === 0) {
+    return {
+      title: '404 - Not found',
+      description: 'Šāds pants neeksistē'
+    };
+  }
   const allRules = await fetchAllRules();
   const currentPantIndex = pants.indexOf(number);
   const title = allRules[currentPantIndex].title;
@@ -17,9 +24,22 @@ export const generateMetadata = async ({params}) => {
   };
 }
 
+
+// export async function generateStaticParams() {
+//   const allData = await fetchAllRules();
+//   const arr = allData.map(({number}) => ({
+//     number: number === 15.1 || number === 22.1 ? number.toString().replace('.', '_') : number.toString()
+//   }));
+//   console.log('arrrrrrr', arr);
+//   return arr;
+// }
+
 const singleNoteikumiPage = async ({params}) => {
   const {number} = params;
   const singleRule = await fetchSingleRule(number);
+  if (singleRule.length === 0) {
+    notFound();
+  }
   const allRules = await fetchAllRules();
   const currentPantIndex = pants.indexOf(params.number);
   const title = allRules[currentPantIndex].title;

@@ -2,7 +2,6 @@
 export const fetchSingleRule = async (collection) => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
   const response = await fetch(`${baseUrl}/api/getsinglerule?collection=${collection}`);
-
   if (response.ok) {
     const data = await response.json();
     return data;
