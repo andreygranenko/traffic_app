@@ -57,7 +57,9 @@ const singleNoteikumiPage = async ({params}) => {
       </div>
       <div className={'flex flex-col-reverse lg:flex-row gap-10'}>
         <div className={'w-full lg:w-8/12 relative scroll-smooth'}>
-          <RuleImage currentPantIndex={currentPantIndex} allRules={allRules}/>
+          <div className={'hidden lg:block'}>
+            <RuleImage currentPantIndex={currentPantIndex} allRules={allRules}/>
+          </div>
           {/*<Image*/}
           {/*  width={2000}*/}
           {/*  height={300}*/}
@@ -94,7 +96,10 @@ const singleNoteikumiPage = async ({params}) => {
           ))}
 
         </div>
-        <div className={'w-full lg:w-4/12 flex flex-col gap-10'}>
+        <div className={'w-full lg:w-4/12 flex flex-col gap-3 lg:gap-10'}>
+          <div className={'lg:hidden block'}>
+            <RuleImage currentPantIndex={currentPantIndex} allRules={allRules}/>
+          </div>
           <div style={{backgroundColor: '#f2f2f2'}} className={'bg-base-300 p-5 rounded-xl'}>
             <h2 className={'text-2xl lg:text-4xl font-bold'}>{number.replace('_', '.')}. pants</h2>
             <h2 className={'text-2xl lg:text-4xl font-bold break-normal'}>{title}</h2>
